@@ -2,8 +2,8 @@
 
 **Free up disk space, safely.**
 
-A Linux port of [Purge](https://github.com/jithin-sabu/purge-app), the macOS disk cleaner.
-Same idea — find the cache and build output your machine collects on its own, label what
+A Linux [Purge] the macOS disk cleaner.
+-find the cache and build output your machine collects on its own, label what
 is safe, clear it in one click — rebuilt for Ubuntu's paths, packaging and tooling.
 
 Written in Python with GTK4 and libadwaita. Ships as a single `.deb`.
