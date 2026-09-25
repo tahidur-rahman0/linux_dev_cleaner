@@ -1,0 +1,10 @@
+purge-linux (1.0.0) unstable; urgency=medium
+
+  * Initial release: a Linux port of Purge.
+    - App Caches: XDG, deb/snap/flatpak browsers, Electron apps
+    - Dev Tools: global caches plus per-project build artifacts
+    - Large Files: size and category filters, duplicates, local AI models
+    - System: APT, journald, snap, crash reports and rotated logs
+    - Allowlist-only deletion with a privileged helper for system paths
+
+ -- Purge for Ubuntu <purge-linux@example.com>  Mon, 21 Sep 2026 12:00:00 +0000

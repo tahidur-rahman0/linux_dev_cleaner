@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+  <vendor>Purge for Ubuntu</vendor>
+  <vendor_url>https://github.com/purge-linux/purge-linux</vendor_url>
+
+  <action id="io.github.purgelinux.system-clean">
+    <description>Clean system caches and logs</description>
+    <message>Authentication is required to free space in system directories</message>
+    <icon_name>user-trash</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <!-- auth_admin_keep: one authentication covers a whole clean, rather
+           than prompting once per selected row. -->
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/purge-linux/purge-system-helper</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+
+</policyconfig>

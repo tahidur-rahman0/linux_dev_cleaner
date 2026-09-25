@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        # The helper runs as root through pkexec; polkit refuses to execute a
+        # program that is not owned by root or is group/world writable.
+        if [ -f /usr/libexec/purge-linux/purge-system-helper ]; then
+            chown root:root /usr/libexec/purge-linux/purge-system-helper
+            chmod 0755 /usr/libexec/purge-linux/purge-system-helper
+        fi
+        if command -v update-desktop-database >/dev/null 2>&1; then
+            update-desktop-database -q /usr/share/applications || true
+        fi
+        if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+            gtk-update-icon-cache -q -t -f /usr/share/icons/hicolor || true
+        fi
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

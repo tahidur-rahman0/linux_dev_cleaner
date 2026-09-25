@@ -1,0 +1,324 @@
+#!/usr/bin/env python3
+"""Purge for Ubuntu — privileged helper.
+
+Runs as root via pkexec. Deliberately standalone: it imports nothing from the
+application, so the code that runs with root privileges is this one file and
+can be read end to end.
+
+Contract:
+  * It accepts VERBS from a fixed set and nothing else.
+  * No path is ever accepted from the caller. Every verb's targets are
+    hardcoded below.
+  * The only parameterised verb is journal-vacuum, whose argument must match
+    a journald size limit exactly.
+  * It prints one JSON object on stdout and logs what it did.
+
+Usage: purge-system-helper <verb> [<verb> ...]
+"""
+
+from __future__ import annotations
+
+import glob
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import time
+
+LOG_FILE = "/var/log/purge-linux.log"
+
+APT_ARCHIVES = "/var/cache/apt/archives"
+APT_LISTS = "/var/lib/apt/lists"
+SNAPD_CACHE = "/var/lib/snapd/cache"
+CRASH_DIR = "/var/crash"
+LOG_DIR = "/var/log"
+
+VACUUM_SIZE = re.compile(r"^\d{1,6}[KMG]$")
+
+ROTATED_SUFFIXES = (".gz", ".xz", ".bz2", ".zst", ".old")
+ROTATED_NUMBERED = re.compile(r"\.\d+$")
+
+#: Never removed, whatever a verb targets.
+PROTECTED_NAMES = {"lock", "lock-frontend", "partial", "auxfiles", "journal"}
+
+
+class Result:
+    def __init__(self) -> None:
+        self.freed = 0
+        self.removed: list[str] = []
+        self.skipped: list[str] = []
+        self.errors: list[str] = []
+
+
+def log(message: str) -> None:
+    try:
+        with open(LOG_FILE, "a", encoding="utf-8") as handle:
+            handle.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {message}\n")
+    except OSError:
+        pass
+
+
+def dir_size(path: str, predicate=None, max_depth: int = 8) -> int:
+    total = 0
+    stack = [(path, 0)]
+    while stack:
+        current, depth = stack.pop()
+        try:
+            with os.scandir(current) as entries:
+                for entry in entries:
+                    try:
+                        if entry.is_dir(follow_symlinks=False):
+                            if depth < max_depth:
+                                stack.append((entry.path, depth + 1))
+                            continue
+                        if predicate is not None and not predicate(entry.name):
+                            continue
+                        stat = entry.stat(follow_symlinks=False)
+                    except OSError:
+                        continue
+                    total += stat.st_blocks * 512 if hasattr(stat, "st_blocks") else stat.st_size
+        except OSError:
+            continue
+    return total
+
+
+def free_bytes() -> int:
+    try:
+        stats = os.statvfs("/")
+    except OSError:
+        return 0
+    return stats.f_bavail * (stats.f_frsize or stats.f_bsize)
+
+
+def remove_entry(path: str, result: Result) -> None:
+    name = os.path.basename(path)
+    if name in PROTECTED_NAMES:
+        result.skipped.append(path)
+        return
+    try:
+        if os.path.islink(path) or os.path.isfile(path):
+            size = os.lstat(path).st_size
+            os.unlink(path)
+        elif os.path.isdir(path):
+            size = dir_size(path)
+            shutil.rmtree(path, ignore_errors=True)
+        else:
+            return
+    except OSError as exc:
+        result.errors.append(f"{path}: {exc}")
+        return
+    result.freed += size
+    result.removed.append(path)
+
+
+def run(command: list[str], result: Result, timeout: int = 600) -> bool:
+    try:
+        completed = subprocess.run(
+            command, capture_output=True, text=True, timeout=timeout,
+            env={**os.environ, "DEBIAN_FRONTEND": "noninteractive"},
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        result.errors.append(f"{command[0]}: {exc}")
+        return False
+    if completed.returncode != 0:
+        message = (completed.stderr or completed.stdout).strip().splitlines()
+        result.errors.append(f"{command[0]}: {message[-1] if message else 'failed'}")
+        return False
+    return True
+
+
+# -- verbs ------------------------------------------------------------------
+
+def verb_apt_clean(result: Result, _arg: str | None) -> None:
+    for path in glob.glob(os.path.join(APT_ARCHIVES, "*.deb")):
+        remove_entry(path, result)
+    for path in glob.glob(os.path.join(APT_ARCHIVES, "partial", "*.deb")):
+        remove_entry(path, result)
+
+
+def verb_apt_lists_clean(result: Result, _arg: str | None) -> None:
+    try:
+        entries = os.listdir(APT_LISTS)
+    except OSError as exc:
+        result.errors.append(f"{APT_LISTS}: {exc}")
+        return
+    for name in entries:
+        if name in PROTECTED_NAMES:
+            continue
+        remove_entry(os.path.join(APT_LISTS, name), result)
+
+
+def verb_apt_autoremove(result: Result, _arg: str | None) -> None:
+    before = free_bytes()
+    if run(["apt-get", "-y", "--purge", "autoremove"], result):
+        result.freed += max(0, free_bytes() - before)
+        result.removed.append("Unused packages removed")
+
+
+def verb_dpkg_purge_rc(result: Result, _arg: str | None) -> None:
+    try:
+        completed = subprocess.run(
+            ["dpkg-query", "-f", "${Package}\t${db:Status-Abbrev}\n", "-W"],
+            capture_output=True, text=True, timeout=120,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        result.errors.append(f"dpkg-query: {exc}")
+        return
+    if completed.returncode != 0:
+        result.errors.append("dpkg-query failed")
+        return
+
+    packages = []
+    for line in completed.stdout.splitlines():
+        parts = line.split("\t")
+        if len(parts) == 2 and parts[1].strip().startswith("rc"):
+            packages.append(parts[0])
+    if not packages:
+        return
+
+    before = free_bytes()
+    if run(["dpkg", "--purge", *packages], result, timeout=900):
+        result.freed += max(0, free_bytes() - before)
+        result.removed.extend(f"purged {name}" for name in packages)
+
+
+def verb_journal_vacuum(result: Result, argument: str | None) -> None:
+    size = argument or "200M"
+    if not VACUUM_SIZE.match(size):
+        result.errors.append(f"Invalid journal size: {size}")
+        return
+    before = dir_size("/var/log/journal", max_depth=3)
+    if run(["journalctl", f"--vacuum-size={size}"], result, timeout=300):
+        after = dir_size("/var/log/journal", max_depth=3)
+        result.freed += max(0, before - after)
+        result.removed.append(f"Journal trimmed to {size}")
+
+
+def verb_snap_prune(result: Result, _arg: str | None) -> None:
+    if not shutil.which("snap"):
+        result.errors.append("snap is not installed")
+        return
+    try:
+        completed = subprocess.run(
+            ["snap", "list", "--all"], capture_output=True, text=True, timeout=60
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        result.errors.append(f"snap: {exc}")
+        return
+    if completed.returncode != 0:
+        result.errors.append("snap list failed")
+        return
+
+    before = free_bytes()
+    for line in completed.stdout.splitlines()[1:]:
+        if "disabled" not in line:
+            continue
+        parts = line.split()
+        if len(parts) < 3:
+            continue
+        name, revision = parts[0], parts[2]
+        if run(["snap", "remove", "--revision", revision, name], result, timeout=300):
+            result.removed.append(f"{name} revision {revision}")
+    result.freed += max(0, free_bytes() - before)
+
+
+def verb_snapd_cache_clean(result: Result, _arg: str | None) -> None:
+    try:
+        entries = os.listdir(SNAPD_CACHE)
+    except OSError:
+        return
+    for name in entries:
+        remove_entry(os.path.join(SNAPD_CACHE, name), result)
+
+
+def verb_crash_clean(result: Result, _arg: str | None) -> None:
+    try:
+        entries = os.listdir(CRASH_DIR)
+    except OSError:
+        return
+    for name in entries:
+        remove_entry(os.path.join(CRASH_DIR, name), result)
+
+
+def is_rotated(name: str) -> bool:
+    return name.endswith(ROTATED_SUFFIXES) or bool(ROTATED_NUMBERED.search(name))
+
+
+def verb_rotated_log_clean(result: Result, _arg: str | None) -> None:
+    for current, dirs, files in os.walk(LOG_DIR):
+        # Never descend into the journal: it is vacuumed through journalctl,
+        # and removing its files by hand corrupts the active journal.
+        dirs[:] = [d for d in dirs if d != "journal"]
+        for name in files:
+            if is_rotated(name):
+                remove_entry(os.path.join(current, name), result)
+
+
+VERBS = {
+    "apt-clean": verb_apt_clean,
+    "apt-lists-clean": verb_apt_lists_clean,
+    "apt-autoremove": verb_apt_autoremove,
+    "dpkg-purge-rc": verb_dpkg_purge_rc,
+    "journal-vacuum": verb_journal_vacuum,
+    "snap-prune": verb_snap_prune,
+    "snapd-cache-clean": verb_snapd_cache_clean,
+    "crash-clean": verb_crash_clean,
+    "rotated-log-clean": verb_rotated_log_clean,
+}
+
+PARAMETERIZED = {"journal-vacuum"}
+
+
+def parse(token: str) -> tuple[str, str | None]:
+    name, separator, argument = token.partition("=")
+    if name not in VERBS:
+        raise ValueError(f"unknown verb: {name}")
+    if separator and name not in PARAMETERIZED:
+        raise ValueError(f"verb {name} takes no argument")
+    return name, (argument if separator else None)
+
+
+def main(argv: list[str]) -> int:
+    result = Result()
+
+    if os.geteuid() != 0:
+        print(json.dumps({"freed_bytes": 0, "removed": [], "skipped": [],
+                          "errors": ["This helper must run as root."]}))
+        return 1
+
+    if len(argv) < 2:
+        print(json.dumps({"freed_bytes": 0, "removed": [], "skipped": [],
+                          "errors": ["No verbs given."]}))
+        return 2
+
+    try:
+        requested = [parse(token) for token in argv[1:]]
+    except ValueError as exc:
+        log(f"REFUSED {argv[1:]}: {exc}")
+        print(json.dumps({"freed_bytes": 0, "removed": [], "skipped": [], "errors": [str(exc)]}))
+        return 2
+
+    caller = os.environ.get("PKEXEC_UID", "?")
+    log(f"START uid={caller} verbs={[v for v, _ in requested]}")
+
+    for name, argument in requested:
+        try:
+            VERBS[name](result, argument)
+        except Exception as exc:  # a failing verb must not abort the batch
+            result.errors.append(f"{name}: {exc}")
+
+    log(f"DONE freed={result.freed} removed={len(result.removed)} errors={len(result.errors)}")
+
+    print(json.dumps({
+        "freed_bytes": result.freed,
+        "removed": result.removed,
+        "skipped": result.skipped,
+        "errors": result.errors,
+    }))
+    return 0 if not result.errors else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

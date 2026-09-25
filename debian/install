@@ -1,0 +1,7 @@
+data/explanations.json                      usr/share/purge-linux/
+data/dev_catalog.json                       usr/share/purge-linux/
+data/io.github.purgelinux.desktop           usr/share/applications/
+data/io.github.purgelinux.metainfo.xml      usr/share/metainfo/
+data/polkit/io.github.purgelinux.policy     usr/share/polkit-1/actions/
+data/icons/scalable/io.github.purgelinux.svg usr/share/icons/hicolor/scalable/apps/
+purgelinux/helper/purge-system-helper        usr/libexec/purge-linux/

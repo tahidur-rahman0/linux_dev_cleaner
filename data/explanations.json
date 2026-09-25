@@ -1,0 +1,1280 @@
+[
+  {
+    "key": "chrome-cache",
+    "display_name": "Google Chrome Cache",
+    "tag": "safe",
+    "explanation": "Web pages, images and scripts Chrome saved so pages load faster. Safe to clean. Chrome rebuilds it as you browse, and you stay signed in to every site.",
+    "aliases": [
+      "google-chrome",
+      "Cache_Data",
+      "google-chrome-beta"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "chromium-cache",
+    "display_name": "Chromium Cache",
+    "tag": "safe",
+    "explanation": "Chromium's copy of pages and images it has already downloaded. Safe to clean. It rebuilds as you browse and does not affect your logins or history.",
+    "aliases": [
+      "chromium"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "brave-cache",
+    "display_name": "Brave Cache",
+    "tag": "safe",
+    "explanation": "Brave's saved copies of web content. Safe to clean. Nothing about your logins, bookmarks or history is touched.",
+    "aliases": [
+      "BraveSoftware",
+      "Brave-Browser"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "edge-cache",
+    "display_name": "Microsoft Edge Cache",
+    "tag": "safe",
+    "explanation": "Edge's saved copies of web content. Safe to clean. You stay signed in everywhere.",
+    "aliases": [
+      "microsoft-edge"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "vivaldi-cache",
+    "display_name": "Vivaldi Cache",
+    "tag": "safe",
+    "explanation": "Vivaldi's saved copies of web content. Safe to clean, and your session is unaffected.",
+    "aliases": [
+      "vivaldi"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "opera-cache",
+    "display_name": "Opera Cache",
+    "tag": "safe",
+    "explanation": "Opera's saved copies of web content. Safe to clean, and your session is unaffected.",
+    "aliases": [
+      "opera"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "firefox-cache",
+    "display_name": "Firefox Cache",
+    "tag": "safe",
+    "explanation": "Firefox's network cache: pages, images and scripts saved so sites load faster. Safe to clean. Your tabs, logins, bookmarks and history all live elsewhere and are not touched.",
+    "aliases": [
+      "mozilla",
+      "cache2",
+      "firefox"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "firefox-startup-cache",
+    "display_name": "Firefox Startup Cache",
+    "tag": "safe",
+    "explanation": "A precompiled copy of Firefox's own interface, kept to make it launch faster. Safe to clean. The next launch is slightly slower while it rebuilds.",
+    "aliases": [
+      "startupCache"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "thunderbird-cache",
+    "display_name": "Thunderbird Cache",
+    "tag": "safe",
+    "explanation": "Cached message bodies and images. Safe to clean. Your mail, accounts and local folders are untouched and re-download as you read.",
+    "aliases": [
+      "thunderbird"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "browser-code-cache",
+    "display_name": "Browser Script Cache",
+    "tag": "safe",
+    "explanation": "Compiled JavaScript the browser keeps so pages start faster. Safe to clean and rebuilt automatically.",
+    "aliases": [
+      "Code Cache",
+      "js",
+      "wasm"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "browser-gpu-cache",
+    "display_name": "Browser GPU Cache",
+    "tag": "safe",
+    "explanation": "Compiled graphics shaders the browser reuses to draw pages. Safe to clean. It is rebuilt the next time you open the browser.",
+    "aliases": [
+      "GPUCache",
+      "ShaderCache",
+      "GrShaderCache",
+      "GraphiteDawnCache",
+      "DawnWebGPUCache"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "service-worker-cache",
+    "display_name": "Offline Site Data",
+    "tag": "safe",
+    "explanation": "Files websites stored so they work offline or load instantly. Safe to clean. Sites re-download them on your next visit and you stay signed in.",
+    "aliases": [
+      "CacheStorage",
+      "ScriptCache"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "browser-safebrowsing",
+    "display_name": "Safe Browsing Data",
+    "tag": "safe",
+    "explanation": "The local list of known-dangerous sites. Safe to clean. The browser downloads a fresh copy automatically.",
+    "aliases": [
+      "safebrowsing"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "thumbnails",
+    "display_name": "Thumbnail Cache",
+    "tag": "safe",
+    "explanation": "Small preview images the file manager generated for your photos and videos. Safe to clean. They regenerate as you browse folders.",
+    "aliases": [
+      "thumbnails",
+      "normal",
+      "large",
+      "x-large",
+      "fail"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "fontconfig",
+    "display_name": "Font Cache",
+    "tag": "safe",
+    "explanation": "An index of the fonts installed on this machine. Safe to clean and rebuilt automatically the next time an app loads fonts.",
+    "aliases": [
+      "fontconfig"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "mesa-shader-cache",
+    "display_name": "Graphics Shader Cache",
+    "tag": "safe",
+    "explanation": "Compiled graphics shaders your GPU driver keeps so games and apps start faster. Safe to clean. The first launch after cleaning is slower while it rebuilds.",
+    "aliases": [
+      "mesa_shader_cache",
+      "mesa_shader_cache_db",
+      "radv_builtin_shaders",
+      "GLCache",
+      "nvidia"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "tracker-index",
+    "display_name": "Search Index",
+    "tag": "medium",
+    "explanation": "GNOME's index of your files, used by search. Deleting it is safe, but search results are incomplete until it finishes rebuilding, which can take a while.",
+    "aliases": [
+      "tracker3",
+      "tracker"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "gnome-software-cache",
+    "display_name": "Software Centre Cache",
+    "tag": "safe",
+    "explanation": "App listings and screenshots the Software app downloaded. Safe to clean and re-fetched on next open.",
+    "aliases": [
+      "gnome-software"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "flatpak-app-cache",
+    "display_name": "Flatpak App Cache",
+    "tag": "safe",
+    "explanation": "Temporary data for an app installed through Flatpak. Safe to clean. The app rebuilds whatever it still needs.",
+    "aliases": [
+      "flatpak"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "snap-app-cache",
+    "display_name": "Snap App Cache",
+    "tag": "safe",
+    "explanation": "Temporary data for an app installed through Snap. Safe to clean. The app rebuilds whatever it still needs.",
+    "aliases": [
+      "snap"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "electron-app-cache",
+    "display_name": "App Cache",
+    "tag": "safe",
+    "explanation": "Temporary web content stored by a desktop app built on Electron. Safe to clean. The app re-downloads what it needs and you stay signed in.",
+    "aliases": [
+      "CachedData",
+      "Crashpad",
+      "completed",
+      "component_crx_cache"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "trash-size",
+    "display_name": "Trash",
+    "tag": "medium",
+    "explanation": "Files you have already deleted but not yet permanently removed. Emptying the trash frees this space, but anything in it is gone for good.",
+    "aliases": [
+      "Trash"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "app-logs",
+    "display_name": "Application Logs",
+    "tag": "safe",
+    "explanation": "Diagnostic logs written by apps. Safe to clean unless you are in the middle of debugging something.",
+    "aliases": [
+      "_logs",
+      "logs"
+    ],
+    "scope": "app_caches"
+  },
+  {
+    "key": "npm-cache",
+    "display_name": "npm Cache",
+    "tag": "safe",
+    "explanation": "Packages npm has already downloaded, kept so future installs are faster. Safe to clean. npm re-downloads what a project needs on the next install.",
+    "aliases": [
+      "_cacache",
+      ".npm"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "npx-cache",
+    "display_name": "npx Cache",
+    "tag": "safe",
+    "explanation": "Throwaway packages npx downloaded to run a one-off command. Safe to clean.",
+    "aliases": [
+      "_npx"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "yarn-cache",
+    "display_name": "Yarn Cache",
+    "tag": "safe",
+    "explanation": "Packages Yarn has downloaded. Safe to clean. Yarn re-downloads them on the next install.",
+    "aliases": [
+      "yarn",
+      ".yarn"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "pnpm-store",
+    "display_name": "pnpm Store",
+    "tag": "safe",
+    "explanation": "pnpm's shared package store. Safe to clean, though every project using pnpm will re-download its dependencies on the next install.",
+    "aliases": [
+      "pnpm",
+      ".pnpm-store"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "bun-cache",
+    "display_name": "Bun Cache",
+    "tag": "safe",
+    "explanation": "Packages Bun has downloaded. Safe to clean and refetched on the next install.",
+    "aliases": [
+      "bun",
+      ".bun"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "deno-cache",
+    "display_name": "Deno Cache",
+    "tag": "safe",
+    "explanation": "Modules Deno downloaded and compiled. Safe to clean. Deno refetches them the next time you run a script.",
+    "aliases": [
+      "deno"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "node-gyp-cache",
+    "display_name": "node-gyp Headers",
+    "tag": "safe",
+    "explanation": "Node header files kept for building native modules. Safe to clean and re-downloaded when needed.",
+    "aliases": [
+      "node-gyp"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "electron-cache",
+    "display_name": "Electron Download Cache",
+    "tag": "safe",
+    "explanation": "Electron binaries downloaded while building desktop apps. Safe to clean. They are re-downloaded on the next build.",
+    "aliases": [
+      "electron",
+      "electron-gyp"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "nvm-cache",
+    "display_name": "nvm Cache",
+    "tag": "safe",
+    "explanation": "Node versions nvm downloaded. Safe to clean; installed Node versions themselves are kept.",
+    "aliases": [
+      "nvm"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "typescript-cache",
+    "display_name": "TypeScript Cache",
+    "tag": "safe",
+    "explanation": "Type definitions TypeScript cached for editor autocomplete. Safe to clean and rebuilt automatically.",
+    "aliases": [
+      "typescript"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "playwright-browsers",
+    "display_name": "Playwright Browsers",
+    "tag": "safe",
+    "explanation": "Browser builds Playwright downloaded for automated testing. Safe to clean. Running a test again downloads them back, which takes a few minutes.",
+    "aliases": [
+      "ms-playwright"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "puppeteer-browsers",
+    "display_name": "Puppeteer Browsers",
+    "tag": "safe",
+    "explanation": "Chromium builds Puppeteer downloaded for automated testing. Safe to clean and re-downloaded when a test runs.",
+    "aliases": [
+      "puppeteer"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "cypress-cache",
+    "display_name": "Cypress Cache",
+    "tag": "safe",
+    "explanation": "Cypress test runner binaries. Safe to clean. The next test run downloads the version it needs.",
+    "aliases": [
+      "Cypress"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "pip-cache",
+    "display_name": "pip Cache",
+    "tag": "safe",
+    "explanation": "Python packages pip has already downloaded. Safe to clean. pip re-downloads what you install next.",
+    "aliases": [
+      "pip",
+      "wheels",
+      "http-v2"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "uv-cache",
+    "display_name": "uv Cache",
+    "tag": "safe",
+    "explanation": "Python packages uv has downloaded. Safe to clean and refetched on the next install.",
+    "aliases": [
+      "uv"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "poetry-cache",
+    "display_name": "Poetry Cache",
+    "tag": "safe",
+    "explanation": "Packages and metadata Poetry downloaded. Safe to clean. Poetry refetches on the next install.",
+    "aliases": [
+      "poetry",
+      "pypoetry"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "pipenv-cache",
+    "display_name": "Pipenv Cache",
+    "tag": "safe",
+    "explanation": "Packages Pipenv downloaded. Safe to clean and refetched on the next install.",
+    "aliases": [
+      "pipenv"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "pipenv-virtualenvs",
+    "display_name": "Pipenv Virtual Environments",
+    "tag": "medium",
+    "explanation": "Virtual environments Pipenv created for your projects. Deleting them is safe but each project needs pipenv install again before it runs.",
+    "aliases": [
+      "virtualenvs"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "pre-commit-cache",
+    "display_name": "pre-commit Cache",
+    "tag": "safe",
+    "explanation": "Hook environments pre-commit built for your repos. Safe to clean; they rebuild the next time hooks run.",
+    "aliases": [
+      "pre-commit"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "conda-pkgs",
+    "display_name": "Conda Package Cache",
+    "tag": "medium",
+    "explanation": "Packages conda downloaded and unpacked. Deleting them is safe, but rebuilding an environment means downloading several gigabytes again.",
+    "aliases": [
+      "pkgs",
+      "conda",
+      "miniconda3",
+      "anaconda3"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "flutter-sdk-cache",
+    "display_name": "Flutter SDK Cache",
+    "tag": "medium",
+    "explanation": "The Dart SDK, engine binaries and platform artifacts Flutter downloaded into its own install folder. Deleting it is safe, but the next flutter command re-downloads one to two gigabytes before it can build.",
+    "aliases": [
+      "bin/cache",
+      "flutter"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "pub-cache",
+    "display_name": "Dart pub Cache",
+    "tag": "safe",
+    "explanation": "Dart and Flutter packages downloaded by pub. Safe to clean. Running flutter pub get or dart pub get restores whatever a project needs.",
+    "aliases": [
+      ".pub-cache",
+      "pub-cache",
+      "hosted"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "flutter-tool-state",
+    "display_name": "Flutter Tool State",
+    "tag": "safe",
+    "explanation": "Small settings and state files the Flutter tool keeps between runs. Safe to clean and rebuilt on the next command.",
+    "aliases": [
+      ".flutter",
+      ".flutter_tool_state",
+      ".dart-tool"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "dart-tool",
+    "display_name": "Dart Build Files",
+    "tag": "safe",
+    "explanation": "Generated files Dart and Flutter builds keep inside a project. Safe to clean. They regenerate on the next build.",
+    "aliases": [
+      ".dart_tool",
+      ".flutter-plugins-dependencies"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "gradle-cache",
+    "display_name": "Gradle Cache",
+    "tag": "safe",
+    "explanation": "Dependencies and build outputs Gradle keeps so builds are faster. Safe to clean. The next build re-downloads what it needs, which takes longer than usual once.",
+    "aliases": [
+      "modules-2",
+      "build-cache-1",
+      "transforms",
+      "jars",
+      "caches"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "gradle-daemon",
+    "display_name": "Gradle Daemon Logs",
+    "tag": "safe",
+    "explanation": "Logs from Gradle's background build process. Safe to clean.",
+    "aliases": [
+      "daemon"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "gradle-dists",
+    "display_name": "Gradle Distributions",
+    "tag": "medium",
+    "explanation": "Full copies of Gradle, one per version any project has ever asked for. Deleting them is safe, but the next build of each project downloads its version again.",
+    "aliases": [
+      "dists",
+      "wrapper"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-system-images",
+    "display_name": "Android Emulator Images",
+    "tag": "medium",
+    "explanation": "System images used to run Android emulators. Deleting them is safe, but each one is several gigabytes to download again, and an emulator using a deleted image will not start until you reinstall it.",
+    "aliases": [
+      "system-images"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-ndk",
+    "display_name": "Android NDK Versions",
+    "tag": "medium",
+    "explanation": "Native development kits, around three gigabytes per version. Deleting older versions is safe, but a project pinned to one will need to download it again.",
+    "aliases": [
+      "ndk"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-platforms",
+    "display_name": "Old Android Platforms",
+    "tag": "medium",
+    "explanation": "SDK platform files for older Android API levels. Deleting them is safe unless a project still targets that level, in which case Android Studio re-downloads it.",
+    "aliases": [
+      "platforms",
+      "sources"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-build-tools",
+    "display_name": "Old Android Build Tools",
+    "tag": "medium",
+    "explanation": "Superseded versions of the Android build tools. Deleting them is safe; the newest version is kept.",
+    "aliases": [
+      "build-tools"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-sdk-temp",
+    "display_name": "Android SDK Temporary Files",
+    "tag": "safe",
+    "explanation": "Partial downloads and unpacking leftovers from the Android SDK manager. Safe to clean.",
+    "aliases": [
+      ".temp",
+      ".downloadIntermediates"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-build-cache",
+    "display_name": "Android Build Cache",
+    "tag": "safe",
+    "explanation": "Intermediate build output the Android tools keep between builds. Safe to clean and rebuilt on the next build.",
+    "aliases": [
+      ".android",
+      "build-cache"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "avd-snapshots",
+    "display_name": "Emulator Snapshots",
+    "tag": "safe",
+    "explanation": "Saved emulator states used for fast boot. Safe to clean. Your virtual devices and everything installed on them are kept; they just cold-boot next time.",
+    "aliases": [
+      "snapshots"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "android-studio-cache",
+    "display_name": "Android Studio Caches",
+    "tag": "medium",
+    "explanation": "Android Studio's indexes and caches for your projects. Deleting them is safe, but Studio re-indexes each project on the next open, which takes a few minutes.",
+    "aliases": [
+      "AndroidStudio",
+      "Google"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "maven-repository",
+    "display_name": "Maven Repository",
+    "tag": "safe",
+    "explanation": "Java dependencies Maven downloaded. Safe to clean. The next build re-downloads what each project needs.",
+    "aliases": [
+      ".m2",
+      "repository"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "maven-wrapper-dists",
+    "display_name": "Maven Distributions",
+    "tag": "medium",
+    "explanation": "Full copies of Maven downloaded by the wrapper. Deleting them is safe; each project re-downloads its version on the next build.",
+    "aliases": [
+      "wrapper"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "konan-cache",
+    "display_name": "Kotlin/Native Dependencies",
+    "tag": "medium",
+    "explanation": "Compilers and libraries Kotlin/Native downloaded. Deleting them is safe, but the next build downloads several gigabytes again.",
+    "aliases": [
+      ".konan"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "jdk-downloads",
+    "display_name": "Downloaded JDKs",
+    "tag": "medium",
+    "explanation": "Java runtimes downloaded by your IDE or Gradle. Deleting them is safe unless a project is pinned to one, which then downloads again.",
+    "aliases": [
+      ".jdks",
+      "jdks"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "ivy-coursier-cache",
+    "display_name": "Scala Dependency Cache",
+    "tag": "safe",
+    "explanation": "Scala and sbt dependencies downloaded by Coursier or Ivy. Safe to clean and re-downloaded on the next build.",
+    "aliases": [
+      ".ivy2",
+      "coursier",
+      ".sbt"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "cargo-registry",
+    "display_name": "Cargo Registry",
+    "tag": "safe",
+    "explanation": "Rust crates Cargo downloaded. Safe to clean. cargo build re-downloads what each project needs.",
+    "aliases": [
+      ".cargo",
+      "registry",
+      "git"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "rustup-toolchains",
+    "display_name": "Rust Toolchains",
+    "tag": "medium",
+    "explanation": "Installed Rust compiler versions. Deleting unused ones is safe, but each is a few hundred megabytes to reinstall. The active toolchain is kept.",
+    "aliases": [
+      ".rustup",
+      "toolchains",
+      "downloads"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "sccache",
+    "display_name": "sccache Build Cache",
+    "tag": "safe",
+    "explanation": "Cached compiler output used to speed up rebuilds. Safe to clean; the next build is slower once.",
+    "aliases": [
+      "sccache"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "go-build-cache",
+    "display_name": "Go Build Cache",
+    "tag": "safe",
+    "explanation": "Compiled Go packages kept to make builds faster. Safe to clean and rebuilt on the next build.",
+    "aliases": [
+      "go-build"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "go-mod-cache",
+    "display_name": "Go Module Cache",
+    "tag": "safe",
+    "explanation": "Go modules downloaded for your projects. Safe to clean. go build re-downloads what it needs.",
+    "aliases": [
+      "pkg",
+      "mod"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "golangci-cache",
+    "display_name": "golangci-lint Cache",
+    "tag": "safe",
+    "explanation": "Lint results cached between runs. Safe to clean.",
+    "aliases": [
+      "golangci-lint"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "ccache",
+    "display_name": "ccache Compiler Cache",
+    "tag": "safe",
+    "explanation": "Cached C and C++ compiler output. Safe to clean; the next full build is slower once.",
+    "aliases": [
+      "ccache",
+      ".ccache"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "bazel-cache",
+    "display_name": "Bazel Cache",
+    "tag": "safe",
+    "explanation": "Bazel's build output and downloaded dependencies. Safe to clean, though the next build is a full rebuild.",
+    "aliases": [
+      "bazel",
+      "bazelisk"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "zig-cache",
+    "display_name": "Zig Cache",
+    "tag": "safe",
+    "explanation": "Compiled Zig artifacts. Safe to clean and rebuilt on the next build.",
+    "aliases": [
+      "zig"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "ruby-gems",
+    "display_name": "Ruby Gems Cache",
+    "tag": "safe",
+    "explanation": "Gem files Ruby downloaded. Safe to clean; bundle install refetches them.",
+    "aliases": [
+      ".gem",
+      ".bundle"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "composer-cache",
+    "display_name": "Composer Cache",
+    "tag": "safe",
+    "explanation": "PHP packages Composer downloaded. Safe to clean and refetched on the next install.",
+    "aliases": [
+      "composer",
+      ".composer"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "nuget-packages",
+    "display_name": "NuGet Packages",
+    "tag": "safe",
+    "explanation": ".NET packages NuGet downloaded. Safe to clean. dotnet restore refetches what a project needs.",
+    "aliases": [
+      ".nuget",
+      "packages"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "terraform-plugins",
+    "display_name": "Terraform Plugin Cache",
+    "tag": "safe",
+    "explanation": "Provider plugins Terraform downloaded. Safe to clean; terraform init downloads them again.",
+    "aliases": [
+      ".terraform.d",
+      "plugin-cache"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "vagrant-boxes",
+    "display_name": "Vagrant Boxes",
+    "tag": "medium",
+    "explanation": "Virtual machine images Vagrant downloaded. Deleting them is safe, but each box is a large download to restore.",
+    "aliases": [
+      ".vagrant.d",
+      "boxes"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "huggingface-cache",
+    "display_name": "Hugging Face Cache",
+    "tag": "medium",
+    "explanation": "Machine learning models and datasets downloaded from Hugging Face. Deleting them is safe, but these are large downloads to restore.",
+    "aliases": [
+      "huggingface",
+      "hub"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "unity-cache",
+    "display_name": "Unity Cache",
+    "tag": "safe",
+    "explanation": "Unity's asset and package cache. Safe to clean; Unity rebuilds it on the next project open.",
+    "aliases": [
+      "unity3d"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "docker-reclaimable",
+    "display_name": "Docker Reclaimable Space",
+    "tag": "medium",
+    "explanation": "Space Docker reports it could reclaim from stopped containers, unused images and build cache. This app does not touch Docker's storage directly; run docker system prune yourself so the daemon stays consistent.",
+    "aliases": [
+      "docker",
+      "buildx"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "vscode-cache",
+    "display_name": "VS Code Cache",
+    "tag": "safe",
+    "explanation": "Cached extension downloads and workspace state for Visual Studio Code. Safe to clean. Editor settings, extensions and open folders are not affected.",
+    "aliases": [
+      "Code",
+      "CachedData",
+      "CachedExtensionVSIXs",
+      "workspaceStorage"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "cursor-cache",
+    "display_name": "Cursor Cache",
+    "tag": "safe",
+    "explanation": "Cached data and workspace state for Cursor. Safe to clean; your settings and extensions are kept.",
+    "aliases": [
+      "Cursor"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "jetbrains-cache",
+    "display_name": "JetBrains IDE Caches",
+    "tag": "medium",
+    "explanation": "Project indexes and caches for IntelliJ, PyCharm, WebStorm and friends. Deleting them is safe, but each project re-indexes on the next open.",
+    "aliases": [
+      "JetBrains",
+      "index",
+      "caches"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "vscode-server",
+    "display_name": "VS Code Remote Server",
+    "tag": "medium",
+    "explanation": "Copies of the VS Code server installed by Remote-SSH, one per version you have connected with. Deleting them is safe; the next remote connection reinstalls the current one.",
+    "aliases": [
+      ".vscode-server",
+      ".cursor-server"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "obsolete-extensions",
+    "display_name": "Obsolete Editor Extensions",
+    "tag": "safe",
+    "explanation": "Older copies of editor extensions left behind after updates. Safe to clean; only superseded versions are removed.",
+    "aliases": [
+      "extensions"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "zed-cache",
+    "display_name": "Zed Cache",
+    "tag": "safe",
+    "explanation": "Cached data for the Zed editor. Safe to clean.",
+    "aliases": [
+      "Zed",
+      "zed"
+    ],
+    "scope": "dev_tool"
+  },
+  {
+    "key": "node-modules",
+    "display_name": "Installed Packages",
+    "tag": "safe",
+    "explanation": "The dependencies installed for this project. Safe to remove; npm ci or your package manager reinstalls them from the lockfile.",
+    "aliases": [
+      "node_modules"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "yarn-project-cache",
+    "display_name": "Yarn Project Cache",
+    "tag": "safe",
+    "explanation": "Yarn's in-project package cache. Safe to remove; yarn install restores it.",
+    "aliases": [
+      "cache",
+      "unplugged"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "rust-target",
+    "display_name": "Rust Build Output",
+    "tag": "safe",
+    "explanation": "Compiled output for this Rust project. Safe to remove; cargo build regenerates it, taking longer once.",
+    "aliases": [
+      "target"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "python-venv",
+    "display_name": "Virtual Environment",
+    "tag": "safe",
+    "explanation": "The Python virtual environment for this project. Safe to remove; recreate it and reinstall from requirements.txt or pyproject.toml.",
+    "aliases": [
+      ".venv",
+      "venv"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "python-caches",
+    "display_name": "Python Cache Files",
+    "tag": "safe",
+    "explanation": "Bytecode and tool caches Python generated while running this project. Safe to remove and regenerated automatically.",
+    "aliases": [
+      "__pycache__",
+      ".pytest_cache",
+      ".mypy_cache",
+      ".ruff_cache",
+      ".tox",
+      ".nox",
+      "htmlcov"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "js-build-output",
+    "display_name": "Build Output",
+    "tag": "safe",
+    "explanation": "Generated output from this project's last build. Safe to remove; rebuild regenerates it.",
+    "aliases": [
+      ".next",
+      ".nuxt",
+      ".output",
+      ".svelte-kit",
+      ".angular",
+      ".astro",
+      ".turbo",
+      ".parcel-cache",
+      ".vite",
+      "storybook-static",
+      "dist",
+      "build",
+      "out"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "gradle-project",
+    "display_name": "Gradle Project Cache",
+    "tag": "safe",
+    "explanation": "Build output and caches for this Gradle project. Safe to remove; the next build regenerates them.",
+    "aliases": [
+      ".gradle",
+      "app/build",
+      ".kotlin"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "php-vendor",
+    "display_name": "Composer Dependencies",
+    "tag": "safe",
+    "explanation": "PHP dependencies installed for this project. Safe to remove; composer install restores them.",
+    "aliases": [
+      "vendor"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "elixir-build",
+    "display_name": "Elixir Build Output",
+    "tag": "safe",
+    "explanation": "Compiled output and fetched dependencies for this project. Safe to remove; mix deps.get and mix compile restore them.",
+    "aliases": [
+      "_build",
+      "deps"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "dotnet-build",
+    "display_name": ".NET Build Output",
+    "tag": "safe",
+    "explanation": "Compiled output for this .NET project. Safe to remove; dotnet build regenerates it.",
+    "aliases": [
+      "bin",
+      "obj"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "ruby-bundle",
+    "display_name": "Bundled Gems",
+    "tag": "safe",
+    "explanation": "Gems installed into this project. Safe to remove; bundle install restores them.",
+    "aliases": [
+      "bundle"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "terraform-project",
+    "display_name": "Terraform Working Directory",
+    "tag": "safe",
+    "explanation": "Provider plugins and modules for this Terraform project. Safe to remove; terraform init restores them.",
+    "aliases": [
+      ".terraform"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "cmake-build",
+    "display_name": "CMake Build Directory",
+    "tag": "safe",
+    "explanation": "Compiled output from this project's last build. Safe to remove; rebuild regenerates it.",
+    "aliases": [
+      "cmake-build-debug",
+      "cmake-build-release"
+    ],
+    "scope": "project_artifact"
+  },
+  {
+    "key": "ollama-model",
+    "display_name": "Ollama Model",
+    "tag": "medium",
+    "explanation": "A language model you downloaded with Ollama. Deleting it frees a lot of space, but pulling it again is a large download.",
+    "aliases": [
+      "ollama"
+    ],
+    "scope": "large_file"
+  },
+  {
+    "key": "lmstudio-model",
+    "display_name": "LM Studio Model",
+    "tag": "medium",
+    "explanation": "A language model you downloaded in LM Studio. Deleting it frees a lot of space, but downloading it again takes a while.",
+    "aliases": [
+      "lmstudio",
+      "lm-studio"
+    ],
+    "scope": "large_file"
+  },
+  {
+    "key": "gpt4all-model",
+    "display_name": "GPT4All Model",
+    "tag": "medium",
+    "explanation": "A language model downloaded by GPT4All. Deleting it is safe but it is a large download to restore.",
+    "aliases": [
+      "gpt4all",
+      "nomic.ai"
+    ],
+    "scope": "large_file"
+  },
+  {
+    "key": "apt-archives",
+    "display_name": "APT Package Archives",
+    "tag": "safe",
+    "explanation": "Installer files APT kept after installing or updating packages. Safe to clean. Your installed software is not affected; APT simply re-downloads a package if it ever needs to reinstall it.",
+    "aliases": [
+      "archives"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "apt-lists",
+    "display_name": "APT Package Lists",
+    "tag": "medium",
+    "explanation": "The catalogue of packages available from your software sources. Deleting it is safe, but the next apt update has to download the full catalogue again.",
+    "aliases": [
+      "lists"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "apt-autoremove",
+    "display_name": "Unused Packages",
+    "tag": "medium",
+    "explanation": "Packages that were installed automatically as dependencies and nothing needs any more. Removing them is normally safe, but read the list first if you installed something by hand.",
+    "aliases": [
+      "autoremove"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "old-kernels",
+    "display_name": "Old Kernels",
+    "tag": "medium",
+    "explanation": "Older Linux kernel versions kept after updates. Removing them frees space in /boot, but keep at least one older kernel as a fallback in case the newest one fails to boot. The running kernel and the newest are always kept.",
+    "aliases": [
+      "linux-image"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "residual-configs",
+    "display_name": "Leftover Package Configs",
+    "tag": "medium",
+    "explanation": "Configuration files left behind by packages you removed without purging. Removing them is safe unless you plan to reinstall one of those packages and want its old settings back.",
+    "aliases": [
+      "rc"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "journal-logs",
+    "display_name": "System Logs",
+    "tag": "safe",
+    "explanation": "The systemd journal, which grows over time. Trimming it to a size limit is safe; you keep recent logs and lose older entries.",
+    "aliases": [
+      "journal"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "snap-old-revisions",
+    "display_name": "Old Snap Revisions",
+    "tag": "safe",
+    "explanation": "Previous versions of your installed snaps, kept so you can roll back. Removing disabled revisions is safe; the current version of each snap stays installed.",
+    "aliases": [
+      "snap",
+      "revisions"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "snapd-cache",
+    "display_name": "Snap Download Cache",
+    "tag": "safe",
+    "explanation": "Downloaded snap files kept after installation. Safe to clean.",
+    "aliases": [
+      "snapd"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "crash-reports",
+    "display_name": "Crash Reports",
+    "tag": "safe",
+    "explanation": "Reports written when an app crashed. Safe to clean unless you are about to file a bug report.",
+    "aliases": [
+      "crash",
+      "apport"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "rotated-logs",
+    "display_name": "Archived Logs",
+    "tag": "safe",
+    "explanation": "Compressed older log files kept by log rotation. Safe to clean; current logs are untouched.",
+    "aliases": [
+      "gz",
+      "log"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "flatpak-unused",
+    "display_name": "Unused Flatpak Runtimes",
+    "tag": "safe",
+    "explanation": "Flatpak runtimes no installed app depends on any more. Safe to remove; your apps keep the runtimes they actually use.",
+    "aliases": [
+      "runtime"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "orphan-config",
+    "display_name": "Leftover App Settings",
+    "tag": "medium",
+    "explanation": "Settings and data left behind by an app that is no longer installed. Usually safe to remove, but check the name first in case you plan to reinstall it.",
+    "aliases": [
+      "orphan"
+    ],
+    "scope": "system"
+  },
+  {
+    "key": "generic-cache",
+    "display_name": "App Cache",
+    "tag": "safe",
+    "explanation": "A cache folder an app created under ~/.cache. Anything here is temporary by definition and the app recreates whatever it still needs. Safe to clean.",
+    "aliases": [],
+    "scope": "app_caches"
+  },
+  {
+    "key": "generic-flatpak-cache",
+    "display_name": "Flatpak App Cache",
+    "tag": "safe",
+    "explanation": "Temporary files kept by an app installed through Flatpak. Safe to clean; the app rebuilds what it needs on the next launch.",
+    "aliases": [],
+    "scope": "app_caches"
+  },
+  {
+    "key": "generic-snap-cache",
+    "display_name": "Snap App Cache",
+    "tag": "safe",
+    "explanation": "Temporary files kept by an app installed through Snap. Safe to clean; the app rebuilds what it needs on the next launch.",
+    "aliases": [],
+    "scope": "app_caches"
+  },
+  {
+    "key": "generic-dev-cache",
+    "display_name": "Developer Tool Cache",
+    "tag": "safe",
+    "explanation": "A cache folder created by a developer tool. Safe to clean; the tool re-downloads or rebuilds what it needs on the next run.",
+    "aliases": [],
+    "scope": "dev_tool"
+  }
+]

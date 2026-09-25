@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "purge-linux"
+version = "1.0.0"
+description = "Free up disk space on Ubuntu, safely"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+# Runtime dependencies come from the distribution, not from PyPI:
+# python3-gi, gir1.2-gtk-4.0, gir1.2-adw-1, python3-psutil, python3-apt.
+dependencies = []
+
+[project.scripts]
+purge-linux = "purgelinux.__main__:main"
+
+[tool.setuptools]
+packages = [
+  "purgelinux",
+  "purgelinux.safety",
+  "purgelinux.scanners",
+  "purgelinux.services",
+  "purgelinux.ui",
+  "purgelinux.ui.pages",
+  "purgelinux.ui.dialogs",
+]
+
+[tool.setuptools.package-data]
+purgelinux = ["ui/style.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

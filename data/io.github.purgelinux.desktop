@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Purge
+GenericName=Disk Cleaner
+Comment=Free up disk space, safely
+Keywords=cache;clean;cleaner;disk;space;storage;junk;apt;snap;
+Exec=purge-linux
+Icon=io.github.purgelinux
+Terminal=false
+Categories=System;Utility;Filesystem;
+StartupNotify=true
+X-GNOME-UsesNotifications=true

@@ -1,0 +1,1352 @@
+{
+  "version": 1,
+  "global": [
+    {
+      "key": "flutter-sdk-cache",
+      "label": "Flutter SDK Cache",
+      "paths": [
+        "{flutter_sdk}/bin/cache"
+      ],
+      "level": "medium",
+      "reinstall": "flutter precache",
+      "note": ""
+    },
+    {
+      "key": "pub-cache",
+      "label": "Dart pub Cache",
+      "paths": [
+        "~/.pub-cache/hosted",
+        "~/.pub-cache/git"
+      ],
+      "level": "safe",
+      "reinstall": "flutter pub get",
+      "note": ""
+    },
+    {
+      "key": "flutter-tool-state",
+      "label": "Flutter Tool State",
+      "paths": [
+        "~/.flutter_tool_state",
+        "~/.dart-tool"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "gradle-cache",
+      "label": "Gradle Cache",
+      "paths": [
+        "~/.gradle/caches/modules-2",
+        "~/.gradle/caches/build-cache-1",
+        "~/.gradle/caches/transforms-*",
+        "~/.gradle/caches/jars-*"
+      ],
+      "level": "safe",
+      "reinstall": "./gradlew build",
+      "note": ""
+    },
+    {
+      "key": "gradle-daemon",
+      "label": "Gradle Daemon Logs",
+      "paths": [
+        "~/.gradle/daemon"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "gradle-dists",
+      "label": "Gradle Distributions",
+      "paths": [
+        "~/.gradle/wrapper/dists"
+      ],
+      "level": "medium",
+      "reinstall": "./gradlew re-downloads its version",
+      "note": ""
+    },
+    {
+      "key": "android-system-images",
+      "label": "Android Emulator Images",
+      "paths": [
+        "~/Android/Sdk/system-images"
+      ],
+      "level": "medium",
+      "reinstall": "sdkmanager re-downloads the image",
+      "note": ""
+    },
+    {
+      "key": "android-ndk",
+      "label": "Android NDK Versions",
+      "paths": [
+        "~/Android/Sdk/ndk/*"
+      ],
+      "level": "medium",
+      "reinstall": "sdkmanager 'ndk;<version>'",
+      "note": "Keeps the newest version"
+    },
+    {
+      "key": "android-platforms",
+      "label": "Old Android Platforms",
+      "paths": [
+        "~/Android/Sdk/platforms/android-*",
+        "~/Android/Sdk/sources"
+      ],
+      "level": "medium",
+      "reinstall": "sdkmanager 'platforms;android-<n>'",
+      "note": "Keeps the two newest API levels"
+    },
+    {
+      "key": "android-build-tools",
+      "label": "Old Android Build Tools",
+      "paths": [
+        "~/Android/Sdk/build-tools/*"
+      ],
+      "level": "medium",
+      "reinstall": "sdkmanager 'build-tools;<version>'",
+      "note": "Keeps the newest version"
+    },
+    {
+      "key": "android-sdk-temp",
+      "label": "Android SDK Temporary Files",
+      "paths": [
+        "~/Android/Sdk/.temp",
+        "~/Android/Sdk/.downloadIntermediates"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "android-build-cache",
+      "label": "Android Build Cache",
+      "paths": [
+        "~/.android/cache",
+        "~/.android/build-cache"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "avd-snapshots",
+      "label": "Emulator Snapshots",
+      "paths": [
+        "~/.android/avd/*.avd/snapshots"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": "Virtual devices and their data are kept"
+    },
+    {
+      "key": "android-studio-cache",
+      "label": "Android Studio Caches",
+      "paths": [
+        "~/.cache/Google/AndroidStudio*",
+        "~/.local/share/Google/AndroidStudio*/index"
+      ],
+      "level": "medium",
+      "reinstall": "Re-indexes on next open",
+      "note": ""
+    },
+    {
+      "key": "maven-repository",
+      "label": "Maven Repository",
+      "paths": [
+        "~/.m2/repository"
+      ],
+      "level": "safe",
+      "reinstall": "mvn install",
+      "note": ""
+    },
+    {
+      "key": "maven-wrapper-dists",
+      "label": "Maven Distributions",
+      "paths": [
+        "~/.m2/wrapper/dists"
+      ],
+      "level": "medium",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "konan-cache",
+      "label": "Kotlin/Native Dependencies",
+      "paths": [
+        "~/.konan"
+      ],
+      "level": "medium",
+      "reinstall": "gradle build",
+      "note": ""
+    },
+    {
+      "key": "jdk-downloads",
+      "label": "Downloaded JDKs",
+      "paths": [
+        "~/.jdks",
+        "~/.gradle/jdks"
+      ],
+      "level": "medium",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "ivy-coursier-cache",
+      "label": "Scala Dependency Cache",
+      "paths": [
+        "~/.ivy2/cache",
+        "~/.cache/coursier",
+        "~/.sbt/boot"
+      ],
+      "level": "safe",
+      "reinstall": "sbt update",
+      "note": ""
+    },
+    {
+      "key": "npm-cache",
+      "label": "npm Cache",
+      "paths": [
+        "~/.npm/_cacache"
+      ],
+      "level": "safe",
+      "reinstall": "npm install",
+      "note": ""
+    },
+    {
+      "key": "npx-cache",
+      "label": "npx Cache",
+      "paths": [
+        "~/.npm/_npx"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "app-logs",
+      "label": "npm Logs",
+      "paths": [
+        "~/.npm/_logs"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "yarn-cache",
+      "label": "Yarn Cache",
+      "paths": [
+        "~/.cache/yarn",
+        "~/.yarn/berry/cache"
+      ],
+      "level": "safe",
+      "reinstall": "yarn install",
+      "note": ""
+    },
+    {
+      "key": "pnpm-store",
+      "label": "pnpm Store",
+      "paths": [
+        "~/.local/share/pnpm/store",
+        "~/.cache/pnpm",
+        "~/.pnpm-store"
+      ],
+      "level": "safe",
+      "reinstall": "pnpm install",
+      "note": ""
+    },
+    {
+      "key": "bun-cache",
+      "label": "Bun Cache",
+      "paths": [
+        "~/.bun/install/cache"
+      ],
+      "level": "safe",
+      "reinstall": "bun install",
+      "note": ""
+    },
+    {
+      "key": "deno-cache",
+      "label": "Deno Cache",
+      "paths": [
+        "~/.cache/deno",
+        "~/.deno"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "node-gyp-cache",
+      "label": "node-gyp Headers",
+      "paths": [
+        "~/.cache/node-gyp",
+        "~/.node-gyp"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "electron-cache",
+      "label": "Electron Download Cache",
+      "paths": [
+        "~/.cache/electron",
+        "~/.electron",
+        "~/.electron-gyp"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "nvm-cache",
+      "label": "nvm Cache",
+      "paths": [
+        "~/.nvm/.cache"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "typescript-cache",
+      "label": "TypeScript Cache",
+      "paths": [
+        "~/.cache/typescript"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "playwright-browsers",
+      "label": "Playwright Browsers",
+      "paths": [
+        "~/.cache/ms-playwright"
+      ],
+      "level": "safe",
+      "reinstall": "npx playwright install",
+      "note": ""
+    },
+    {
+      "key": "puppeteer-browsers",
+      "label": "Puppeteer Browsers",
+      "paths": [
+        "~/.cache/puppeteer"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "cypress-cache",
+      "label": "Cypress Cache",
+      "paths": [
+        "~/.cache/Cypress"
+      ],
+      "level": "safe",
+      "reinstall": "cypress install",
+      "note": ""
+    },
+    {
+      "key": "pip-cache",
+      "label": "pip Cache",
+      "paths": [
+        "~/.cache/pip"
+      ],
+      "level": "safe",
+      "reinstall": "pip install",
+      "note": ""
+    },
+    {
+      "key": "uv-cache",
+      "label": "uv Cache",
+      "paths": [
+        "~/.cache/uv"
+      ],
+      "level": "safe",
+      "reinstall": "uv sync",
+      "note": ""
+    },
+    {
+      "key": "poetry-cache",
+      "label": "Poetry Cache",
+      "paths": [
+        "~/.cache/pypoetry",
+        "~/.cache/poetry"
+      ],
+      "level": "safe",
+      "reinstall": "poetry install",
+      "note": ""
+    },
+    {
+      "key": "pipenv-cache",
+      "label": "Pipenv Cache",
+      "paths": [
+        "~/.cache/pipenv"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "pipenv-virtualenvs",
+      "label": "Pipenv Virtual Environments",
+      "paths": [
+        "~/.local/share/virtualenvs"
+      ],
+      "level": "medium",
+      "reinstall": "pipenv install",
+      "note": ""
+    },
+    {
+      "key": "pre-commit-cache",
+      "label": "pre-commit Cache",
+      "paths": [
+        "~/.cache/pre-commit"
+      ],
+      "level": "safe",
+      "reinstall": "pre-commit install",
+      "note": ""
+    },
+    {
+      "key": "conda-pkgs",
+      "label": "Conda Package Cache",
+      "paths": [
+        "~/.conda/pkgs",
+        "~/miniconda3/pkgs",
+        "~/anaconda3/pkgs",
+        "~/miniforge3/pkgs"
+      ],
+      "level": "medium",
+      "reinstall": "conda clean --all",
+      "note": ""
+    },
+    {
+      "key": "cargo-registry",
+      "label": "Cargo Registry",
+      "paths": [
+        "~/.cargo/registry",
+        "~/.cargo/git"
+      ],
+      "level": "safe",
+      "reinstall": "cargo build",
+      "note": ""
+    },
+    {
+      "key": "rustup-toolchains",
+      "label": "Rust Toolchains",
+      "paths": [
+        "~/.rustup/downloads",
+        "~/.rustup/tmp"
+      ],
+      "level": "medium",
+      "reinstall": "rustup toolchain install",
+      "note": "The active toolchain is never listed"
+    },
+    {
+      "key": "sccache",
+      "label": "sccache Build Cache",
+      "paths": [
+        "~/.cache/sccache"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "go-build-cache",
+      "label": "Go Build Cache",
+      "paths": [
+        "~/.cache/go-build"
+      ],
+      "level": "safe",
+      "reinstall": "go build",
+      "note": ""
+    },
+    {
+      "key": "go-mod-cache",
+      "label": "Go Module Cache",
+      "paths": [
+        "~/go/pkg/mod/cache"
+      ],
+      "level": "safe",
+      "reinstall": "go mod download",
+      "note": ""
+    },
+    {
+      "key": "golangci-cache",
+      "label": "golangci-lint Cache",
+      "paths": [
+        "~/.cache/golangci-lint"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "ccache",
+      "label": "ccache Compiler Cache",
+      "paths": [
+        "~/.ccache",
+        "~/.cache/ccache"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "bazel-cache",
+      "label": "Bazel Cache",
+      "paths": [
+        "~/.cache/bazel",
+        "~/.cache/bazelisk"
+      ],
+      "level": "safe",
+      "reinstall": "bazel build",
+      "note": ""
+    },
+    {
+      "key": "zig-cache",
+      "label": "Zig Cache",
+      "paths": [
+        "~/.cache/zig"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "ruby-gems",
+      "label": "Ruby Gems Cache",
+      "paths": [
+        "~/.gem",
+        "~/.bundle/cache"
+      ],
+      "level": "safe",
+      "reinstall": "bundle install",
+      "note": ""
+    },
+    {
+      "key": "composer-cache",
+      "label": "Composer Cache",
+      "paths": [
+        "~/.cache/composer",
+        "~/.composer/cache"
+      ],
+      "level": "safe",
+      "reinstall": "composer install",
+      "note": ""
+    },
+    {
+      "key": "nuget-packages",
+      "label": "NuGet Packages",
+      "paths": [
+        "~/.nuget/packages"
+      ],
+      "level": "safe",
+      "reinstall": "dotnet restore",
+      "note": ""
+    },
+    {
+      "key": "terraform-plugins",
+      "label": "Terraform Plugin Cache",
+      "paths": [
+        "~/.terraform.d/plugin-cache"
+      ],
+      "level": "safe",
+      "reinstall": "terraform init",
+      "note": ""
+    },
+    {
+      "key": "vagrant-boxes",
+      "label": "Vagrant Boxes",
+      "paths": [
+        "~/.vagrant.d/boxes",
+        "~/.vagrant.d/tmp"
+      ],
+      "level": "medium",
+      "reinstall": "vagrant box add",
+      "note": ""
+    },
+    {
+      "key": "huggingface-cache",
+      "label": "Hugging Face Cache",
+      "paths": [
+        "~/.cache/huggingface"
+      ],
+      "level": "medium",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "unity-cache",
+      "label": "Unity Cache",
+      "paths": [
+        "~/.cache/unity3d",
+        "~/.local/share/unity3d/cache"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "vscode-cache",
+      "label": "VS Code Cache",
+      "paths": [
+        "~/.config/Code/Cache",
+        "~/.config/Code/CachedData",
+        "~/.config/Code/CachedExtensionVSIXs",
+        "~/.config/Code/User/workspaceStorage",
+        "~/.config/Code - OSS/CachedData"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "cursor-cache",
+      "label": "Cursor Cache",
+      "paths": [
+        "~/.config/Cursor/Cache",
+        "~/.config/Cursor/CachedData",
+        "~/.config/Cursor/User/workspaceStorage"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    },
+    {
+      "key": "jetbrains-cache",
+      "label": "JetBrains IDE Caches",
+      "paths": [
+        "~/.cache/JetBrains/*"
+      ],
+      "level": "medium",
+      "reinstall": "Re-indexes on next open",
+      "note": ""
+    },
+    {
+      "key": "vscode-server",
+      "label": "VS Code Remote Server",
+      "paths": [
+        "~/.vscode-server/bin",
+        "~/.vscode-server/data/CachedExtensionVSIXs",
+        "~/.cursor-server/bin"
+      ],
+      "level": "medium",
+      "reinstall": "Reinstalled on the next remote connection",
+      "note": ""
+    },
+    {
+      "key": "zed-cache",
+      "label": "Zed Cache",
+      "paths": [
+        "~/.cache/zed",
+        "~/.local/share/zed/db"
+      ],
+      "level": "safe",
+      "reinstall": "",
+      "note": ""
+    }
+  ],
+  "projects": [
+    {
+      "key": "node-modules",
+      "label": "Installed Packages",
+      "folder": "node_modules",
+      "project": "node",
+      "root_markers": [
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "package-lock.json",
+        "yarn.lock",
+        "pnpm-lock.yaml",
+        "bun.lockb"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm ci"
+    },
+    {
+      "key": "yarn-project-cache",
+      "label": "Yarn Project Cache",
+      "folder": ".yarn/cache",
+      "project": "node",
+      "root_markers": [
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "yarn.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "yarn install"
+    },
+    {
+      "key": "yarn-project-cache",
+      "label": "Yarn Unplugged Packages",
+      "folder": ".yarn/unplugged",
+      "project": "node",
+      "root_markers": [
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "yarn.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "yarn install"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Next.js Build",
+      "folder": ".next",
+      "project": "node",
+      "root_markers": [
+        "next.config.js",
+        "next.config.mjs",
+        "next.config.ts",
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Nuxt Build",
+      "folder": ".nuxt",
+      "project": "node",
+      "root_markers": [
+        "nuxt.config.js",
+        "nuxt.config.ts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Nitro Output",
+      "folder": ".output",
+      "project": "node",
+      "root_markers": [
+        "nuxt.config.ts",
+        "nitro.config.ts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "SvelteKit Build",
+      "folder": ".svelte-kit",
+      "project": "node",
+      "root_markers": [
+        "svelte.config.js"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Angular Cache",
+      "folder": ".angular",
+      "project": "node",
+      "root_markers": [
+        "angular.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "ng build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Astro Build",
+      "folder": ".astro",
+      "project": "node",
+      "root_markers": [
+        "astro.config.mjs",
+        "astro.config.ts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Turborepo Cache",
+      "folder": ".turbo",
+      "project": "node",
+      "root_markers": [
+        "turbo.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "turbo build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Parcel Cache",
+      "folder": ".parcel-cache",
+      "project": "node",
+      "root_markers": [
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Vite Cache",
+      "folder": "node_modules/.vite",
+      "project": "node",
+      "root_markers": [
+        "vite.config.js",
+        "vite.config.ts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Storybook Build",
+      "folder": "storybook-static",
+      "project": "node",
+      "root_markers": [
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build-storybook"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Build Output",
+      "folder": "dist",
+      "project": "node",
+      "root_markers": [
+        "package.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "npm run build"
+    },
+    {
+      "key": "dart-tool",
+      "label": "Dart Build Files",
+      "folder": ".dart_tool",
+      "project": "flutter",
+      "root_markers": [
+        "pubspec.yaml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "pubspec.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "flutter pub get"
+    },
+    {
+      "key": "js-build-output",
+      "label": "Flutter Build Output",
+      "folder": "build",
+      "project": "flutter",
+      "root_markers": [
+        "pubspec.yaml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "pubspec.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "flutter build"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Flutter Android Build",
+      "folder": "android/build",
+      "project": "flutter",
+      "root_markers": [
+        "pubspec.yaml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "flutter build apk"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Flutter Android Gradle",
+      "folder": "android/.gradle",
+      "project": "flutter",
+      "root_markers": [
+        "pubspec.yaml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "flutter build apk"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Flutter App Build",
+      "folder": "android/app/build",
+      "project": "flutter",
+      "root_markers": [
+        "pubspec.yaml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "flutter build apk"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Gradle Build Output",
+      "folder": "build",
+      "project": "gradle",
+      "root_markers": [
+        "build.gradle",
+        "build.gradle.kts",
+        "settings.gradle",
+        "settings.gradle.kts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "./gradlew build"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Gradle Project Cache",
+      "folder": ".gradle",
+      "project": "gradle",
+      "root_markers": [
+        "build.gradle",
+        "build.gradle.kts",
+        "settings.gradle",
+        "settings.gradle.kts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "./gradlew build"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Android App Build",
+      "folder": "app/build",
+      "project": "gradle",
+      "root_markers": [
+        "build.gradle",
+        "build.gradle.kts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "./gradlew assembleDebug"
+    },
+    {
+      "key": "gradle-project",
+      "label": "Kotlin Build Files",
+      "folder": ".kotlin",
+      "project": "gradle",
+      "root_markers": [
+        "build.gradle.kts"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "./gradlew build"
+    },
+    {
+      "key": "rust-target",
+      "label": "Rust Build Output",
+      "folder": "target",
+      "project": "rust",
+      "root_markers": [
+        "Cargo.toml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "Cargo.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "cargo build"
+    },
+    {
+      "key": "python-venv",
+      "label": "Virtual Environment",
+      "folder": ".venv",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.py",
+        "Pipfile"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [
+        "*.db",
+        "config.json"
+      ],
+      "level": "safe",
+      "reinstall": "python -m venv .venv && pip install -r requirements.txt"
+    },
+    {
+      "key": "python-venv",
+      "label": "Virtual Environment",
+      "folder": "venv",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.py"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [
+        "*.db"
+      ],
+      "level": "safe",
+      "reinstall": "python -m venv venv && pip install -r requirements.txt"
+    },
+    {
+      "key": "python-caches",
+      "label": "Python Bytecode Cache",
+      "folder": "__pycache__",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.py",
+        "setup.cfg"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": ""
+    },
+    {
+      "key": "python-caches",
+      "label": "pytest Cache",
+      "folder": ".pytest_cache",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "pytest.ini",
+        "setup.cfg",
+        "tox.ini"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": ""
+    },
+    {
+      "key": "python-caches",
+      "label": "mypy Cache",
+      "folder": ".mypy_cache",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "mypy.ini",
+        "setup.cfg"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": ""
+    },
+    {
+      "key": "python-caches",
+      "label": "Ruff Cache",
+      "folder": ".ruff_cache",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "ruff.toml",
+        ".ruff.toml"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": ""
+    },
+    {
+      "key": "python-caches",
+      "label": "tox Environments",
+      "folder": ".tox",
+      "project": "python",
+      "root_markers": [
+        "tox.ini"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "tox"
+    },
+    {
+      "key": "python-caches",
+      "label": "nox Environments",
+      "folder": ".nox",
+      "project": "python",
+      "root_markers": [
+        "noxfile.py"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "nox"
+    },
+    {
+      "key": "python-caches",
+      "label": "Coverage Report",
+      "folder": "htmlcov",
+      "project": "python",
+      "root_markers": [
+        "pyproject.toml",
+        "setup.py",
+        ".coveragerc"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": ""
+    },
+    {
+      "key": "cmake-build",
+      "label": "CMake Build Directory",
+      "folder": "build",
+      "project": "cmake",
+      "root_markers": [
+        "CMakeLists.txt"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "cmake --build build"
+    },
+    {
+      "key": "cmake-build",
+      "label": "CMake Debug Build",
+      "folder": "cmake-build-debug",
+      "project": "cmake",
+      "root_markers": [
+        "CMakeLists.txt"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "cmake --build"
+    },
+    {
+      "key": "cmake-build",
+      "label": "CMake Release Build",
+      "folder": "cmake-build-release",
+      "project": "cmake",
+      "root_markers": [
+        "CMakeLists.txt"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "cmake --build"
+    },
+    {
+      "key": "cmake-build",
+      "label": "Meson Build",
+      "folder": "builddir",
+      "project": "meson",
+      "root_markers": [
+        "meson.build"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "meson compile -C builddir"
+    },
+    {
+      "key": "php-vendor",
+      "label": "Composer Dependencies",
+      "folder": "vendor",
+      "project": "php",
+      "root_markers": [
+        "composer.json"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "composer.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "composer install"
+    },
+    {
+      "key": "elixir-build",
+      "label": "Elixir Build Output",
+      "folder": "_build",
+      "project": "elixir",
+      "root_markers": [
+        "mix.exs"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "mix.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "mix compile"
+    },
+    {
+      "key": "elixir-build",
+      "label": "Elixir Dependencies",
+      "folder": "deps",
+      "project": "elixir",
+      "root_markers": [
+        "mix.exs"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "mix.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "mix deps.get"
+    },
+    {
+      "key": "dotnet-build",
+      "label": ".NET Build Output",
+      "folder": "bin",
+      "project": "dotnet",
+      "root_markers": [],
+      "root_marker_extensions": [
+        ".csproj",
+        ".fsproj",
+        ".sln"
+      ],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "dotnet build"
+    },
+    {
+      "key": "dotnet-build",
+      "label": ".NET Intermediate Output",
+      "folder": "obj",
+      "project": "dotnet",
+      "root_markers": [],
+      "root_marker_extensions": [
+        ".csproj",
+        ".fsproj",
+        ".sln"
+      ],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "dotnet build"
+    },
+    {
+      "key": "ruby-bundle",
+      "label": "Bundled Gems",
+      "folder": "vendor/bundle",
+      "project": "ruby",
+      "root_markers": [
+        "Gemfile"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "Gemfile.lock"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "bundle install"
+    },
+    {
+      "key": "terraform-project",
+      "label": "Terraform Working Directory",
+      "folder": ".terraform",
+      "project": "terraform",
+      "root_markers": [],
+      "root_marker_extensions": [
+        ".tf"
+      ],
+      "lockfiles": [],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "terraform init"
+    },
+    {
+      "key": "go-build-cache",
+      "label": "Go Build Output",
+      "folder": "bin",
+      "project": "go",
+      "root_markers": [
+        "go.mod"
+      ],
+      "root_marker_extensions": [],
+      "lockfiles": [
+        "go.sum"
+      ],
+      "refuse_when_present": [],
+      "level": "safe",
+      "reinstall": "go build"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=purge-linux
+
+# This project has no setup.py. pybuild needs pybuild-plugin-pyproject to
+# build it via PEP 517; without that package the build fails before it
+# starts. It is in Build-Depends.
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_test:
+	# The test suite needs pytest, which is not a build dependency.
+	# Run `make test` from a checkout instead.

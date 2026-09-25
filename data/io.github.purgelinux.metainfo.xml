@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.purgelinux</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>Purge</name>
+  <summary>Free up disk space, safely</summary>
+
+  <description>
+    <p>
+      Ubuntu quietly fills up with cache, build output and package archives you never
+      asked for. Purge finds it, marks what is safe to remove, and clears it in one click.
+    </p>
+    <p>Every item carries a plain-English explanation and a safety label:</p>
+    <ul>
+      <li>App caches, including browsers installed as deb, snap or flatpak</li>
+      <li>Developer caches: npm, pnpm, pip, uv, cargo, go, Gradle, Maven, Flutter and Dart</li>
+      <li>Per-project build output, found only next to the project file that identifies it</li>
+      <li>Large personal files and byte-identical duplicates</li>
+      <li>System storage: APT archives, old kernels, journald logs and old snap revisions</li>
+    </ul>
+    <p>
+      Deletion is allowlist-only: anything the app cannot identify is never shown, let alone
+      removed. Personal files go to the Trash so they can be restored.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.purgelinux.desktop</launchable>
+
+  <developer id="io.github.purgelinux">
+    <name>Purge for Ubuntu</name>
+  </developer>
+
+  <url type="homepage">https://github.com/tahidur-rahman0/ubuntu_cleaner</url>
+  <url type="bugtracker">https://github.com/tahidur-rahman0/ubuntu_cleaner/issues</url>
+
+  <categories>
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-09-21">
+      <description><p>First release.</p></description>
+    </release>
+  </releases>
+</component>
